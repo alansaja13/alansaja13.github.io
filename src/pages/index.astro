@@ -6,13 +6,18 @@ import Card from "../components/Card.astro";
 
 <Layout title="Alan Saja Dev">
   <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44 ">
-      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-6">
+    <section class="w-full lg:w-[740px] mx-auto py-44">
+      <h1 class="text-white text-6xl font-black flex flex-row gap-x-4 pb-2">
         Hola! Soy Alan Saja
-		<div class="flex justify-center items-center"><Badge> <i class=""></i>Argentina, Buenos Aires </Badge></div>
+        <div class="flex justify-center items-center mt-1">
+          <Badge>Argentina, Buenos Aires </Badge>
+        </div>
       </h1>
-   
-      <h2 class="text-1xl p-1 opacity-80">Desarrollador Web & IT HelpDesk.</h2>
+      <p class="text-1xl opacity-80">Desarrollador Web & IT HelpDesk.</p>
     </section>
+    <section>
+      <Card><h3 class="flex justify-center items-center ">+6 Años de experiencia trabajando con hardware & software, <br> configurando servidores desarollando webs y aplicaciones</h3>
+      <Card />
+      </section>
   </main>
 </Layout>
