@@ -5,19 +5,52 @@ import Card from "../components/Card.astro";
 ---
 
 <Layout title="Alan Saja Dev">
-  <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
-      <h1 class="text-white text-6xl font-black flex flex-row gap-x-4 pb-2">
+  <main class="flex flex-col items-center px-4 sm:px-6 md:px-8">
+    <!-- Seccion Saludo - Presentacion -->
+    <section class="w-full max-w-3xl py-20">
+      <h1
+        class="flex flex-col text-white text-3xl sm:text-4xl md:text-4xl sm:flex-row gap-x-4 pb-2 font-extrabold"
+      >
         Hola! Soy Alan Saja
-        <div class="flex justify-center items-center mt-1">
-          <Badge>Argentina, Buenos Aires </Badge>
+        <div class="flex justify-center items-center mt-2 sm:mt-2">
+          <Badge>Argentina, Buenos Aires</Badge>
         </div>
       </h1>
-      <p class="text-1xl opacity-80">Desarrollador Web & IT HelpDesk.</p>
+
+      <p class="opacity-80 text-green-400 text-xl sm:text-2xl resp-green">
+        Desarrollador Web & IT HelpDesk.
+      </p>
+      <br />
+      <div class="container flex text-justify">
+        <p class="opacity-80 font-normal">
+          Un placer :) Trabajo con hardware y software, configurando servidores,
+          desarrollando sitios web y aplicaciones.
+        </p>
+      </div>
+      <div class="container flex text-justify">
+        <p class="text-base opacity-80">
+          Mi camino en la tecnología comenzó creando plug-ins para juegos y
+          arreglando las computadoras de amigos y familiares. He trabajado en
+          servicio técnico de microinformática y en la configuración de
+          servidores. Actualmente, me dedico al desarrollo web y sigo creciendo
+          en mi carrera profesional.
+        </p>
+      </div>
     </section>
-    <section>
-      <Card><h3 class="flex justify-center items-center ">+6 Años de experiencia trabajando con hardware & software, <br> configurando servidores desarollando webs y aplicaciones</h3>
-      <Card />
-      </section>
+    <!-- Experiencia -->
+    <section class="w-full max-w-3xl py-20 sm:py-32 md:py-44">
+      <p class="text-base sm:text-lg">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint modi
+        culpa nesciunt ut voluptatum consequuntur, perferendis explicabo sunt
+        laboriosam non expedita. Vitae porro reiciendis tenetur doloremque
+        tempore veritatis omnis. Eveniet!
+      </p>
+    </section>
   </main>
 </Layout>
+
+<style>
+  .resp-green {
+    text-shadow: 0px 0px 5px rgba(74, 222, 128, 0.567);
+  }
+</style>

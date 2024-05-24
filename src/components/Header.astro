@@ -1,21 +1,27 @@
-<header class="flex justify-center items-center py-3 w-[1120px] mx-auto">
-  <img
-    src="https://media.licdn.com/dms/image/D4D03AQH6MZ-tQyY9RA/profile-displayphoto-shrink_200_200/0/1710502800308?e=1715817600&v=beta&t=jU-huH20sZJlihIKa-28CJUDAPuMe0YsAhjaiMC8XoI"
-    alt="Alan foto"
-    class="resplandor rounded-full h-14 w-14 mr-3"
-  />
-  <nav class="flex flex-row gap-x-10 opacity-80">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/portfolio">Portfolio</a>
-    <a href="/contact">Contact</a>
+<header class="flex justify-center items-center py-5 font-normal">
+  <nav class="flex flex-row gap-x-5 opacity-80">
+    <a class="navhov font-medium" href="/">Sobre mi</a>
+    <a class="navhov font-medium" href="/about">Experiencia </a>
+    <a class="navhov font-medium" href="/portfolio">Portfolio</a>
+    <a  class="navhov font-medium" href="/contact">Contacto</a>
   </nav>
 </header>
 
 <style>
-  nav a:hover {
-    opacity: 1;
-    
+  .navhov {
+    color: #c7c7c7 !important;
+    padding: 10px;
+    border: 1px solid #383838 !important;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    text-transform: uppercase;
+  }
+  .navhov:hover {
+    color: rgb(250 204 21) !important;
+    border-radius: 50px;
+    border-color:rgb(250 204 21)!important;
+    transition: all 0.3s ease 0s;
   }
   .resplandor {
     box-shadow: 0px 0px 40px #15195e;
