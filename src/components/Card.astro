@@ -1,4 +1,6 @@
 ---
+
+
 // Definición de las propiedades que se esperan
 interface Props {
   title: string;
@@ -7,18 +9,12 @@ interface Props {
 }
 
 // Obtén las propiedades del componente
-const { href, title, body } = Astro.props as Props;
+const { href, title, } = Astro.props as Props;
 ---
 
 <li class="link-card w-80 mx-auto resplandor">
   <a href={href}>
-    <h2>
-      {title}
-      <span>&rarr;</span>
-    </h2>
-    <p>
-      {body}
-    </p>
+    <h2>{title}</h2>
   </a>
 </li>
 
