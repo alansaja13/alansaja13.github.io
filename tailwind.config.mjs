@@ -6,9 +6,10 @@ export default {
 		extend: {
 			backgroundImage: {
 				'custom-radial-dark': 'radial-gradient(ellipse at top, #0d1927, transparent), radial-gradient(ellipse at bottom, #060223, transparent)',
-				'custom-radial-light': 'radial-gradient(ellipse at top, #e0f7fa, transparent), radial-gradient(ellipse at bottom, #b2ebf2, transparent)', // Define tu gradiente claro aquí
+				'custom-radial-light': 'radial-gradient(circle, rgba(255,255,255,1) 7%, rgba(196,163,220,1) 99%)', 
 			}
 		},
 	},
 	plugins: [],
 }
+
