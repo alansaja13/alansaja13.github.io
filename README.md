@@ -1,9 +1,9 @@
 <h1 align="center">Hola! 👋, soy Alan Saja</h1>
 <h3 align="center">Un apasionado desarrollador frontend de Argentina</h3>
 
-- 🔭 Actualmente estoy trabajando en [credencial APP](www.ospim.com.ar/credencialAPP)
+- 🔭Estoy trabajando en [credencial APP](www.ospim.com.ar/credencialAPP)
 
-- 🌱 Actualmente estoy aprendiendo **estructura backend**
+- 🌱 Y estoy aprendiendo **estructura backend**
 
 - 👨‍💻 Todos mis proyectos están disponibles en [www.alansaja13.github.io](www.alansaja13.github.io)
 
