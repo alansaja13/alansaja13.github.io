@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Septiembre 2022 - Presente",
+    title: "Desarollo Frontend & HelpDesk IT",
+    company: "U.S.I.M.R.A.",
+    description:
+      "Doy soporte a los usuarios de la organizacion sindical (Union de Sindicatos de la Industria Maderera de la Republica Argentina) y a su obra social asociada, O.S.P.I.M. (Obra Social del Personal de la Industria Maderera), Tambien trabajo en la creacion y desarollo de aplicaciones web.",
+    link: "http://usimra.com.ar/",
+  },
+  {
+    date: "Febrero 2018 - Agosto 2022",
+    title: "Técnico en Microinformatica",
+    company: "M.B. Global Business",
+    description:
+      "Me desarolle como especialista en microinformática con experiencia en sistemas y soporte técnico, desempeñe un papel fundamental en la resolución efectiva de problemas y en la optimización de la infraestructura tecnológica en mi lugar de trabajo.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
