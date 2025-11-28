@@ -30,16 +30,19 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-700 dark:text-gray-200 justify-center items-center"
+    class="card-surface flex px-4 py-2 text-sm font-medium rounded-full text-gray-700 dark:text-gray-200 justify-center items-center shadow-2xl/40"
   >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-green-500 dark:hover:text-green-400"
+          class="group relative block px-3 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-400"
           aria-label={link.label}
           href={link.url}
         >
-          {link.title}
+          <span class="relative z-10">{link.title}</span>
+          <span
+            class="absolute inset-x-2 bottom-1 block h-[3px] scale-x-0 rounded-full bg-gradient-to-r from-emerald-400 to-sky-400 transition duration-300 ease-out group-hover:scale-x-100"
+          />
         </a>
       ))
     }
