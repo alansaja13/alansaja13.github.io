@@ -8,17 +8,17 @@ import Codeigniter from "./icons/Codeigniter.astro";
 const TAGS = {
   PHP: {
     name: "PHP",
-    class: "bg-[#003159] text-white",
+    class: "bg-emerald-100 text-emerald-900 dark:bg-emerald-500/20 dark:text-emerald-100",
     icon: PHP,
   },
   CodeIgniter: {
     name: "Codeigniter",
-    class: "bg-[#003159] text-white",
+    class: "bg-sky-100 text-sky-900 dark:bg-sky-500/20 dark:text-sky-100",
     icon: Codeigniter,
   },
   Bootstrap: {
     name: "Bootstrap",
-    class: "bg-[#003159] text-white",
+    class: "bg-indigo-100 text-indigo-900 dark:bg-indigo-500/20 dark:text-indigo-100",
     icon: Bootstrap,
   },
 };
@@ -37,47 +37,53 @@ const PROJECTS = [
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="APP Credencial"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100"
-              loading="lazy"
-              src={image}
-            />
-          </div>
-        </div>
-
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
+      <article class="relative overflow-hidden rounded-3xl card-surface border border-white/20 shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-200/10 via-white/5 to-sky-200/20 dark:from-emerald-500/10 dark:via-white/5 dark:to-sky-500/10" aria-hidden="true" />
+        <div class="relative grid gap-8 p-6 md:grid-cols-[1.1fr,1fr] md:p-10">
+          <div class="w-full md:w-auto">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform overflow-clip rounded-2xl shadow-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl border border-black/5 dark:border-white/10">
+              <img
+                alt={title}
+                class="object-cover object-top w-full h-64 transition duration-500 sm:h-full md:scale-105 md:group-hover:scale-100"
+                loading="lazy"
+                src={image}
+              />
             </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Preview
-                </LinkButton>
-              )}
-            </footer>
+          </div>
+
+          <div class="w-full md:w-auto md:max-w-xl space-y-4">
+            <div class="inline-flex items-center gap-2 rounded-full bg-white/60 px-3 py-1 text-xs font-semibold tracking-wider uppercase text-emerald-600 dark:bg-white/5 dark:text-emerald-200">
+              Proyecto destacado
+            </div>
+            <h3 class="text-3xl font-bold text-gray-800 dark:text-gray-100">
+              {title}
+            </h3>
+            <div class="flex flex-wrap mt-1">
+              <ul class="flex flex-row mb-2 gap-2 flex-wrap">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex items-center gap-2 rounded-full text-xs ${tag.class} py-2 px-3 shadow-sm`}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-2 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                {description}
+              </div>
+              <footer class="flex items-end justify-start mt-6 gap-x-4">
+                {link && (
+                  <LinkButton href={link}>
+                    <Link class="size-4" />
+                    Ver en línea
+                  </LinkButton>
+                )}
+              </footer>
+            </div>
           </div>
         </div>
       </article>
