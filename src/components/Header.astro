@@ -36,12 +36,14 @@ const navItems = [
       navItems.map((link) => (
         <a
           class="group relative block px-3 py-2 transition hover:text-violet-500 dark:hover:text-violet-400"
+          class="group relative block px-3 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-400"
           aria-label={link.label}
           href={link.url}
         >
           <span class="relative z-10">{link.title}</span>
           <span
             class="absolute inset-x-2 bottom-1 block h-[3px] scale-x-0 rounded-full bg-gradient-to-r from-violet-400 to-rose-400 transition duration-300 ease-out group-hover:scale-x-100"
+            class="absolute inset-x-2 bottom-1 block h-[3px] scale-x-0 rounded-full bg-gradient-to-r from-emerald-400 to-sky-400 transition duration-300 ease-out group-hover:scale-x-100"
           />
         </a>
       ))
