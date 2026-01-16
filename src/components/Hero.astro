@@ -6,6 +6,9 @@ import SocialPill from "../components/SocialPill.astro";
 ---
 
 <div class="relative max-w-5xl overflow-hidden rounded-3xl card-surface border border-white/30">
+  <div class="absolute inset-0 opacity-40 bg-gradient-to-br from-violet-200/40 via-white/20 to-rose-200/50 dark:from-violet-500/10 dark:via-white/5 dark:to-rose-500/10" />
+  <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-violet-400/20 blur-3xl" aria-hidden="true" />
+  <div class="absolute -bottom-12 -left-20 h-40 w-40 rounded-full bg-rose-400/20 blur-3xl" aria-hidden="true" />
   <div class="absolute inset-0 opacity-40 bg-gradient-to-br from-emerald-200/40 via-white/20 to-sky-200/50 dark:from-emerald-500/10 dark:via-white/5 dark:to-sky-500/10" />
   <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-emerald-400/20 blur-3xl" aria-hidden="true" />
   <div class="absolute -bottom-12 -left-20 h-40 w-40 rounded-full bg-sky-400/20 blur-3xl" aria-hidden="true" />
@@ -23,6 +26,7 @@ import SocialPill from "../components/SocialPill.astro";
         href="https://linkedin.com/in/alan-saja"
         target="_blank"
         rel="noopener"
+        class="text-sm text-violet-600 dark:text-violet-300 hover:underline"
         class="text-sm text-emerald-600 dark:text-emerald-300 hover:underline"
       >
         Buenos Aires, Argentina
@@ -31,6 +35,7 @@ import SocialPill from "../components/SocialPill.astro";
 
     <div class="space-y-6">
       <div class="space-y-3">
+        <p class="text-sm uppercase tracking-[0.3em] text-violet-600 dark:text-violet-300">Hola! Soy</p>
         <p class="text-sm uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-300">Hola! Soy</p>
         <h1
           class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl dark:text-white drop-shadow"
@@ -38,6 +43,7 @@ import SocialPill from "../components/SocialPill.astro";
           Alan Saja
         </h1>
         <p
+          class="text-lg leading-relaxed text-gray-800 dark:text-gray-200 dark:[&>strong]:text-violet-300 [&>strong]:text-violet-600 [&>strong]:font-semibold"
           class="text-lg leading-relaxed text-gray-800 dark:text-gray-200 dark:[&>strong]:text-emerald-300 [&>strong]:text-emerald-600 [&>strong]:font-semibold"
         >
           <strong>Creo experiencias digitales que unen infraestructura y código.</strong>
@@ -64,6 +70,7 @@ import SocialPill from "../components/SocialPill.astro";
       <nav class="flex flex-wrap items-center gap-4">
         <a
           href="#proyectos"
+          class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-500 to-rose-500 px-4 py-2 text-white shadow-lg transition hover:translate-y-[-1px] hover:shadow-xl"
           class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-sky-500 px-4 py-2 text-white shadow-lg transition hover:translate-y-[-1px] hover:shadow-xl"
         >
           Ver proyectos
