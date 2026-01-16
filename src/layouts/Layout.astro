@@ -24,7 +24,9 @@ const { description, title } = Astro.props
     <ViewTransitions />
   </head>
 
-  <body class="relative text-black dark:text-white bg-custom-radial-light dark:bg-custom-radial-dark">
+  <body
+    class="relative text-black dark:text-white bg-custom-radial-light dark:bg-custom-radial-dark overflow-x-hidden"
+  >
     
     <Header />
     <slot />
@@ -40,7 +42,7 @@ const { description, title } = Astro.props
       }
 
       html.dark {
-        background-color: #060223;
+        background-color: #12091f;
       }
 
       body {
@@ -49,7 +51,14 @@ const { description, title } = Astro.props
         flex-direction: column;
         min-height: 100vh;
         overscroll-behavior: none;
-        margin-bottom: 25px ;
+        margin-bottom: 25px;
+        background-image:
+          radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.12), transparent 28%),
+          radial-gradient(circle at 80% 0%, rgba(244, 63, 94, 0.12), transparent 26%),
+          radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.1), transparent 30%),
+          linear-gradient(145deg, rgba(15, 23, 42, 0.02), rgba(15, 23, 42, 0.08));
+        background-size: cover;
+        background-repeat: no-repeat;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -61,6 +70,11 @@ const { description, title } = Astro.props
       @media (prefers-color-scheme: dark) {
         body {
           color: rgba(255, 255, 255, 0.9);
+          background-image:
+            radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.25), transparent 30%),
+            radial-gradient(circle at 85% 10%, rgba(244, 63, 94, 0.2), transparent 26%),
+            radial-gradient(circle at 15% 80%, rgba(147, 51, 234, 0.25), transparent 28%),
+            linear-gradient(145deg, rgba(18, 9, 31, 0.9), rgba(11, 7, 24, 0.95));
         }
       }
 
@@ -110,8 +124,17 @@ const { description, title } = Astro.props
         }
       }
       .bg-blueradial {
-        background: radial-gradient(ellipse at top, #0d1927, transparent),
-            radial-gradient(ellipse at bottom, #060223, transparent);
+        background: radial-gradient(ellipse at top, #24103f, transparent),
+            radial-gradient(ellipse at bottom, #12091f, transparent);
+      }
+
+      .card-surface {
+        @apply border border-black/5 dark:border-white/10 bg-white/70 dark:bg-black/40 backdrop-blur-xl shadow-lg;
+      }
+
+      .pill {
+        @apply inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-tight rounded-full uppercase bg-white/70
+          dark:bg-white/10 border border-black/5 dark:border-white/10 shadow-sm;
       }
     </style>
   </body>

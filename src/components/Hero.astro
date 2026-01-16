@@ -1,48 +1,82 @@
 ---
 const personalImageAlt = "Alan Saja";
-import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import SocialPill from "../components/SocialPill.astro";
 ---
 
-<div class="max-w-xl">
-  <div class="flex gap-4 mb-4">
-    <img
-      class="rounded-full shadow-lg size-16"
-      src="/alandev.jpeg"
-      alt={personalImageAlt}
-    />
-    <a
-      href="https://linkedin.com/in/alan-saja"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
-    >
-      <Badge>Buenos aires, Argentina</Badge>
-    </a>
+<div class="relative max-w-5xl overflow-hidden rounded-3xl card-surface border border-white/30">
+  <div class="absolute inset-0 opacity-40 bg-gradient-to-br from-violet-200/40 via-white/20 to-rose-200/50 dark:from-violet-500/10 dark:via-white/5 dark:to-rose-500/10" />
+  <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-violet-400/20 blur-3xl" aria-hidden="true" />
+  <div class="absolute -bottom-12 -left-20 h-40 w-40 rounded-full bg-rose-400/20 blur-3xl" aria-hidden="true" />
+
+  <div class="relative grid gap-10 p-8 md:grid-cols-[auto,1fr] md:p-12 items-center">
+    <div class="flex flex-col items-center gap-4 text-center md:text-left">
+      <img
+        class="rounded-2xl shadow-2xl ring-4 ring-white/50 dark:ring-white/10 size-28 object-cover"
+        src="/alandev.jpeg"
+        alt={personalImageAlt}
+        loading="lazy"
+      />
+      <span class="pill">Desarrollador web &amp; HelpDesk IT</span>
+      <a
+        href="https://linkedin.com/in/alan-saja"
+        target="_blank"
+        rel="noopener"
+        class="text-sm text-violet-600 dark:text-violet-300 hover:underline"
+      >
+        Buenos Aires, Argentina
+      </a>
+    </div>
+
+    <div class="space-y-6">
+      <div class="space-y-3">
+        <p class="text-sm uppercase tracking-[0.3em] text-violet-600 dark:text-violet-300">Hola! Soy</p>
+        <h1
+          class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl dark:text-white drop-shadow"
+        >
+          Alan Saja
+        </h1>
+        <p
+          class="text-lg leading-relaxed text-gray-800 dark:text-gray-200 dark:[&>strong]:text-violet-300 [&>strong]:text-violet-600 [&>strong]:font-semibold"
+        >
+          <strong>Creo experiencias digitales que unen infraestructura y código.</strong>
+          Trabajo con hardware y software, configurando servidores, brindando soporte y
+          desarrollando sitios web y aplicaciones enfocadas en rendimiento y confiabilidad.
+        </p>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-3">
+        <div class="rounded-2xl border border-black/5 bg-white/60 px-4 py-3 text-sm font-semibold shadow-sm dark:border-white/10 dark:bg-white/5">
+          <p class="text-xs text-gray-500 dark:text-gray-300">Stack favorito</p>
+          <p class="text-gray-900 dark:text-white">Astro · PHP · Tailwind</p>
+        </div>
+        <div class="rounded-2xl border border-black/5 bg-white/60 px-4 py-3 text-sm font-semibold shadow-sm dark:border-white/10 dark:bg-white/5">
+          <p class="text-xs text-gray-500 dark:text-gray-300">Rol actual</p>
+          <p class="text-gray-900 dark:text-white">Frontend &amp; Soporte IT</p>
+        </div>
+        <div class="rounded-2xl border border-black/5 bg-white/60 px-4 py-3 text-sm font-semibold shadow-sm dark:border-white/10 dark:bg-white/5">
+          <p class="text-xs text-gray-500 dark:text-gray-300">Experiencia</p>
+          <p class="text-gray-900 dark:text-white">+5 años en tecnología</p>
+        </div>
+      </div>
+
+      <nav class="flex flex-wrap items-center gap-4">
+        <a
+          href="#proyectos"
+          class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-500 to-rose-500 px-4 py-2 text-white shadow-lg transition hover:translate-y-[-1px] hover:shadow-xl"
+        >
+          Ver proyectos
+        </a>
+        <SocialPill href="mailto:alansaja13@gmail.com">
+          <MailIcon class="size-4" />
+          Contáctame
+        </SocialPill>
+        <SocialPill href="https://linkedin.com/in/alan-saja">
+          <LinkedInIcon class="size-4" />
+          LinkedIn
+        </SocialPill>
+      </nav>
+    </div>
   </div>
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    Hola! Soy Alan Saja
-  </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-green-400 [&>strong]:text-green-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    Un placer :) <strong>
-      Trabajo con hardware y software, configurando servidores, desarrollando
-      sitios web y aplicaciones.</strong
-    >
-  </p>
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:alansaja13..gmail.com">
-      <MailIcon class="size-4" />
-      Contáctame
-    </SocialPill>
-    <SocialPill href="https://linkedin.com/in/alan-saja">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
-    </SocialPill>
-  </nav>
 </div>

@@ -2,27 +2,41 @@
  const personalImageAlt = "Alan Saja"
 ---
 
-<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+<article class="card-surface rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row border border-white/20 shadow-xl">
   <div
-    class="[&>p]:mb-4 [&>p>strong]:text-green-600 dark:[&>p>strong]:text-green-300 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    class="order-2 md:order-1 space-y-4 text-pretty [&>p>strong]:text-violet-600 dark:[&>p>strong]:text-violet-300 [&>p>strong]:font-semibold"
   >
     <p>
-      Mi nombre es Alan Adrian Saja, <strong
-        >  Mi camino en la tecnología comenzó creando plug-ins para juegos y
-        arreglando las computadoras </strong
-      >de amigos y familiares.
+      Mi nombre es Alan Adrian Saja. <strong>
+        Mi camino en la tecnología comenzó creando plug-ins para juegos y arreglando las computadoras
+        de amigos y familiares.</strong
+      >
     </p>
 
     <p>
-      Trabaje en servicio técnico de microinformática y en la configuración de
-      servidores.<strong
-        >
-      Actualmente, me dedico al desarrollo web y al soporte informatico de IT.</strong>
+      Trabajé en servicio técnico de microinformática y en la configuración de
+      servidores. <strong>Actualmente, me dedico al desarrollo web y al soporte informático de IT.</strong>
     </p>
 
+    <ul class="grid gap-3 sm:grid-cols-2 text-sm">
+      <li class="flex items-start gap-2 rounded-2xl bg-white/70 dark:bg-white/5 border border-black/5 dark:border-white/10 p-3">
+        <span class="mt-1 h-2 w-2 rounded-full bg-rose-500" aria-hidden="true" />
+        <span>Experiencia en soporte técnico, microinformática y seguridad básica.</span>
+      </li>
+      <li class="flex items-start gap-2 rounded-2xl bg-white/70 dark:bg-white/5 border border-black/5 dark:border-white/10 p-3">
+        <span class="mt-1 h-2 w-2 rounded-full bg-rose-500" aria-hidden="true" />
+        <span>Desarrollo de interfaces usables con foco en performance.</span>
+      </li>
+      <li class="flex items-start gap-2 rounded-2xl bg-white/70 dark:bg-white/5 border border-black/5 dark:border-white/10 p-3">
+        <span class="mt-1 h-2 w-2 rounded-full bg-rose-500" aria-hidden="true" />
+        <span>Capacidad para acompañar equipos en soporte y capacitación.</span>
+      </li>
+      <li class="flex items-start gap-2 rounded-2xl bg-white/70 dark:bg-white/5 border border-black/5 dark:border-white/10 p-3">
+        <span class="mt-1 h-2 w-2 rounded-full bg-rose-500" aria-hidden="true" />
+        <span>Documentación clara y orientación a la mejora continua.</span>
+      </li>
+    </ul>
   </div>
 
-  <img width="350" height="350" src="/alandev2.jpg" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 ">
-
+  <img width="350" height="350" src="/alandev2.jpg" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 lg:p-2 lg:w-72 aspect-square rounded-2xl bg-gradient-to-br from-violet-500/10 via-transparent to-rose-500/20 ring-1 ring-black/10 dark:ring-white/20 " loading="lazy">
 </article>
-
