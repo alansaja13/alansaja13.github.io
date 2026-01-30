@@ -1,6 +1,4 @@
 ---
-import "@fontsource-variable/onest"
-
 import Header from "../components/Header.astro"
 import { ViewTransitions } from "astro:transitions"
 
@@ -20,137 +18,163 @@ const { description, title } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Tipografías elegantes para diseño japonés -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>{title}</title>
     <ViewTransitions />
   </head>
 
-  <body
-    class="relative text-black dark:text-white bg-custom-radial-light dark:bg-custom-radial-dark overflow-x-hidden"
-  >
+  <body class="bg-washi-50 text-sumi-800 dark:bg-sumi-900 dark:text-washi-100 font-sans overflow-x-hidden">
+    <div class="fixed inset-0 bg-asanoha opacity-30 pointer-events-none" aria-hidden="true"></div>
+    <div class="relative z-10">
+      <Header />
+      <slot />
+    </div>
     
-    <Header />
-    <slot />
     <style is:global>
       :root {
         color-scheme: light dark;
       }
 
       html {
-        font-family: "Onest Variable", system-ui, sans-serif;
+        font-family: 'Inter', system-ui, sans-serif;
         scroll-behavior: smooth;
-        background-color: #ff4500;
-      }
-
-      html.dark {
-        background-color: #12091f;
       }
 
       body {
-        color: #ff0000;
+        position: relative;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
         overscroll-behavior: none;
-        margin-bottom: 25px;
-        background-image:
-          radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.12), transparent 28%),
-          radial-gradient(circle at 80% 0%, rgba(244, 63, 94, 0.12), transparent 26%),
-          radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.1), transparent 30%),
-          radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.12), transparent 28%),
-          radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.12), transparent 26%),
-          radial-gradient(circle at 20% 80%, rgba(52, 211, 153, 0.1), transparent 30%),
-          linear-gradient(145deg, rgba(15, 23, 42, 0.02), rgba(15, 23, 42, 0.08));
-        background-size: cover;
-        background-repeat: no-repeat;
+        background: linear-gradient(to bottom, #F5E6D3 0%, #E8D5C4 100%);
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+          radial-gradient(circle at 20% 30%, rgba(193, 39, 45, 0.08), transparent 40%),
+          radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.06), transparent 40%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: linear-gradient(to bottom, #1C1C1C 0%, #0A0A0A 100%);
+        }
+        
+        body::before {
+          background-image: 
+            radial-gradient(circle at 20% 30%, rgba(193, 39, 45, 0.15), transparent 40%),
+            radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.1), transparent 40%);
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
         }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-          color: rgba(255, 255, 255, 0.9);
-          background-image:
-            radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.25), transparent 30%),
-            radial-gradient(circle at 85% 10%, rgba(244, 63, 94, 0.2), transparent 26%),
-            radial-gradient(circle at 15% 80%, rgba(147, 51, 234, 0.25), transparent 28%),
-            linear-gradient(145deg, rgba(18, 9, 31, 0.9), rgba(11, 7, 24, 0.95));
-            radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.25), transparent 30%),
-            radial-gradient(circle at 85% 10%, rgba(59, 130, 246, 0.2), transparent 26%),
-            radial-gradient(circle at 15% 80%, rgba(16, 185, 129, 0.25), transparent 28%),
-            linear-gradient(145deg, rgba(6, 2, 35, 0.85), rgba(6, 2, 35, 0.95));
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
         }
       }
 
-      #header-nav {
-        animation: blur linear both 0.5s;
-        animation-timeline: scroll();
-        animation-range: 0 500px;
+      /* Estilos personalizados tipo shoji */
+      .shoji-panel {
+        position: relative;
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(193, 39, 45, 0.15);
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 8px rgba(193, 39, 45, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+        backdrop-filter: blur(8px);
       }
 
-      @keyframes blur {
+      .dark .shoji-panel {
+        background: rgba(28, 28, 28, 0.85);
+        border-color: rgba(212, 175, 55, 0.2);
+        box-shadow: 0 2px 8px rgba(212, 175, 55, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .shoji-panel::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0.5rem;
+        padding: 1px;
+        background: linear-gradient(135deg, rgba(193, 39, 45, 0.3), rgba(212, 175, 55, 0.2));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+
+      /* Transiciones suaves */
+      a, button {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Animación de carga sutil */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
         to {
-          backdrop-filter: blur(20px);
-          border-width: 1px;
-          border-color: rgba(0, 0, 0);
-          padding: 0.25rem 0.75rem;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          background-color: rgb(229, 229, 229);
-          border-radius: 9999px;
+          opacity: 1;
+          transform: translateY(0);
         }
       }
 
-      @media (prefers-color-scheme: dark) {
-        @keyframes blur {
-          from {
-            border: 0px;
-          }
-          to {
-            box-shadow:
-              0px 5px 50px -5px rgba(0, 0, 0, 0.1),
-              0px 0px 0 1px rgba(0, 0, 0, 0.3);
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(20px);
-            border-width: 1px;
-            border-color: rgba(0, 0, 0);
-            padding-left: 0.75rem;
-            padding-right: 0.75rem;
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 9999px;
-          }
-        }
-      }
-      .bg-blueradial {
-        background: radial-gradient(ellipse at top, #24103f, transparent),
-            radial-gradient(ellipse at bottom, #12091f, transparent);
+      .animate-on-scroll {
+        animation: fadeInUp 0.8s ease-out forwards;
       }
 
-      .card-surface {
-        @apply border border-black/5 dark:border-white/10 bg-white/70 dark:bg-black/40 backdrop-blur-xl shadow-lg;
+      /* Scrollbar personalizado */
+      ::-webkit-scrollbar {
+        width: 8px;
       }
 
-      .pill {
-        @apply inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-tight rounded-full uppercase bg-white/70
-          dark:bg-white/10 border border-black/5 dark:border-white/10 shadow-sm;
+      ::-webkit-scrollbar-track {
+        background: #E8D5C4;
       }
 
-      .card-surface {
-        @apply border border-black/5 dark:border-white/10 bg-white/70 dark:bg-black/40 backdrop-blur-xl shadow-lg;
+      ::-webkit-scrollbar-thumb {
+        background: #C1272D;
+        border-radius: 4px;
       }
 
-      .pill {
-        @apply inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-tight rounded-full uppercase bg-white/70
-          dark:bg-white/10 border border-black/5 dark:border-white/10 shadow-sm;
+      ::-webkit-scrollbar-thumb:hover {
+        background: #8B0000;
+      }
+
+      .dark ::-webkit-scrollbar-track {
+        background: #1C1C1C;
+      }
+
+      .dark ::-webkit-scrollbar-thumb {
+        background: #D4AF37;
+      }
+
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #B8941E;
+      }
+
+      /* Patrón decorativo sutil */
+      .pattern-overlay {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C1272D' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       }
     </style>
   </body>

@@ -17,7 +17,6 @@ const navItems = [
     label: "proyectos",
     url: "/#proyectos",
   },
-
   {
     title: "Contacto",
     label: "contacto",
@@ -26,29 +25,34 @@ const navItems = [
 ];
 ---
 
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
-  <nav
-    class="card-surface flex px-4 py-2 text-sm font-medium rounded-full text-gray-700 dark:text-gray-200 justify-center items-center shadow-2xl/40"
-  >
-    {
-      navItems.map((link) => (
+<header class="fixed top-0 z-50 flex items-center justify-center w-full mx-auto pt-6 px-4">
+  <nav class="shoji-panel backdrop-blur-md px-6 py-3 flex items-center justify-between gap-4 max-w-5xl w-full">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-gradient-crimson rounded-full flex items-center justify-center">
+        <span class="text-washi-50 font-bold text-sm">AS</span>
+      </div>
+      <span class="font-serif text-crimson-600 dark:text-koban font-semibold hidden sm:block">
+        Alan Saja
+      </span>
+    </div>
+
+    <div class="flex items-center gap-1 md:gap-2">
+      {navItems.map((link) => (
         <a
-          class="group relative block px-3 py-2 transition hover:text-violet-500 dark:hover:text-violet-400"
-          class="group relative block px-3 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-400"
+          class="group relative px-3 py-2 text-sm font-medium text-sumi-700 dark:text-washi-200 
+                 hover:text-crimson-600 dark:hover:text-koban transition-all duration-300"
           aria-label={link.label}
           href={link.url}
         >
           <span class="relative z-10">{link.title}</span>
-          <span
-            class="absolute inset-x-2 bottom-1 block h-[3px] scale-x-0 rounded-full bg-gradient-to-r from-violet-400 to-rose-400 transition duration-300 ease-out group-hover:scale-x-100"
-            class="absolute inset-x-2 bottom-1 block h-[3px] scale-x-0 rounded-full bg-gradient-to-r from-emerald-400 to-sky-400 transition duration-300 ease-out group-hover:scale-x-100"
-          />
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-crimson scale-x-0 
+                       group-hover:scale-x-100 transition-transform duration-300 origin-left" />
         </a>
-      ))
-    }
-    <ThemeToggle />
+      ))}
+      <div class="ml-2 pl-2 border-l border-crimson-200 dark:border-koban/30">
+        <ThemeToggle />
+      </div>
+    </div>
   </nav>
 </header>
 
@@ -62,9 +66,11 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-violet-500");
+              item.classList.add("text-crimson-600");
+              item.classList.add("dark:text-koban");
             } else {
-              item.classList.remove("text-violet-500");
+              item.classList.remove("text-crimson-600");
+              item.classList.remove("dark:text-koban");
             }
           });
         }
@@ -81,7 +87,6 @@ const navItems = [
       observer.observe(section);
     });
 
-    // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
         observer.disconnect();
@@ -96,14 +101,17 @@ const navItems = [
 
 <style>
   nav {
-    animation: nav-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
+    animation: slideDown 0.5s ease-out;
   }
 
-  @keyframes nav-shadown {
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 </style>

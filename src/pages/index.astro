@@ -12,43 +12,119 @@ import Hero from "../components/Hero.astro";
 ---
 
 <Layout
-  title="<Alan Saja Dev/>"
-  description="Portfolio - Desarrollo Web - HelpDesk IT."
+  title="Alan Saja - Desarrollador Web & HelpDesk IT"
+  description="Portfolio de Alan Saja - Desarrollo Web, Soporte IT, Frontend Developer. Creando experiencias digitales elegantes."
 >
-  <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
+  <main class="px-4 pt-24 pb-8">
+    <!-- Hero Section -->
+    <SectionContainer class="py-12 md:py-20">
       <Hero />
     </SectionContainer>
   </main>
-  <div class="space-y-24">
+
+  <div class="space-y-24 px-4 pb-20">
+    <!-- Sobre mí Section -->
     <SectionContainer id="sobre-mi">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-      >
-        Sobre mí
-        <ProfileCheck class="size-8" />
-      </h2>
-      <AboutMe />
+      <div class="max-w-6xl mx-auto space-y-8">
+        <div class="flex items-center justify-center md:justify-start gap-4 mb-10">
+          <div class="flex items-center gap-3">
+            <ProfileCheck class="w-8 h-8 text-crimson-600 dark:text-koban" />
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-sumi-900 dark:text-washi-50">
+              Sobre mí
+            </h2>
+          </div>
+          <div class="hidden md:block h-px flex-1 bg-gradient-to-r from-crimson-400 to-transparent opacity-30"></div>
+        </div>
+        <AboutMe />
+      </div>
     </SectionContainer>
 
+    <!-- Separador decorativo -->
+    <div class="flex items-center justify-center gap-4">
+      <div class="h-px flex-1 max-w-xs bg-gradient-to-r from-transparent via-crimson-400 to-transparent opacity-40"></div>
+      <div class="flex gap-1">
+        <div class="w-2 h-2 bg-crimson-500 dark:bg-koban rounded-full"></div>
+        <div class="w-2 h-2 bg-crimson-400 dark:bg-koban/70 rounded-full"></div>
+        <div class="w-2 h-2 bg-crimson-300 dark:bg-koban/40 rounded-full"></div>
+      </div>
+      <div class="h-px flex-1 max-w-xs bg-gradient-to-r from-transparent via-crimson-400 to-transparent opacity-40"></div>
+    </div>
+
+    <!-- Experiencia Section -->
     <SectionContainer id="experiencia">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        Experiencia laboral
-        <Briefcase class="size-8" />
-      </h2>
-      <Experience />
+      <div class="max-w-6xl mx-auto space-y-8">
+        <div class="flex items-center justify-center md:justify-start gap-4 mb-10">
+          <div class="flex items-center gap-3">
+            <Briefcase class="w-8 h-8 text-crimson-600 dark:text-koban" />
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-sumi-900 dark:text-washi-50">
+              Experiencia laboral
+            </h2>
+          </div>
+          <div class="hidden md:block h-px flex-1 bg-gradient-to-r from-crimson-400 to-transparent opacity-30"></div>
+        </div>
+        <Experience />
+      </div>
     </SectionContainer>
 
+    <!-- Separador decorativo -->
+    <div class="flex items-center justify-center gap-4">
+      <div class="h-px flex-1 max-w-xs bg-gradient-to-r from-transparent via-crimson-400 to-transparent opacity-40"></div>
+      <div class="flex gap-1">
+        <div class="w-2 h-2 bg-crimson-500 dark:bg-koban rounded-full"></div>
+        <div class="w-2 h-2 bg-crimson-400 dark:bg-koban/70 rounded-full"></div>
+        <div class="w-2 h-2 bg-crimson-300 dark:bg-koban/40 rounded-full"></div>
+      </div>
+      <div class="h-px flex-1 max-w-xs bg-gradient-to-r from-transparent via-crimson-400 to-transparent opacity-40"></div>
+    </div>
+
+    <!-- Proyectos Section -->
     <SectionContainer id="proyectos">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        Proyectos
-        <CodeIcon class="size-7" />
-      </h2>
-      <Projects />
+      <div class="max-w-6xl mx-auto space-y-8">
+        <div class="flex items-center justify-center md:justify-start gap-4 mb-10">
+          <div class="flex items-center gap-3">
+            <CodeIcon class="w-7 h-7 text-crimson-600 dark:text-koban" />
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-sumi-900 dark:text-washi-50">
+              Proyectos
+            </h2>
+          </div>
+          <div class="hidden md:block h-px flex-1 bg-gradient-to-r from-crimson-400 to-transparent opacity-30"></div>
+        </div>
+        <Projects />
+      </div>
     </SectionContainer>
   </div>
+
+  <!-- Footer -->
+  <footer class="mt-20 py-8 border-t border-crimson-200/30 dark:border-koban/20">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="w-8 h-px bg-gradient-to-r from-transparent to-crimson-400 opacity-50"></div>
+        <div class="w-8 h-8 bg-gradient-crimson rounded-full flex items-center justify-center">
+          <span class="text-washi-50 font-bold text-sm">AS</span>
+        </div>
+        <div class="w-8 h-px bg-gradient-to-l from-transparent to-crimson-400 opacity-50"></div>
+      </div>
+      <p class="text-sm text-sumi-600 dark:text-washi-300 font-serif">
+        © 2026 Alan Saja. Diseñado con dedicación.
+      </p>
+    </div>
+  </footer>
 </Layout>
+
+<style>
+  /* Animaciones suaves para las secciones */
+  section {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

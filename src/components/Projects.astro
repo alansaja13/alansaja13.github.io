@@ -8,23 +8,21 @@ import Codeigniter from "./icons/Codeigniter.astro";
 const TAGS = {
   PHP: {
     name: "PHP",
-    class: "bg-violet-100 text-violet-900 dark:bg-violet-500/20 dark:text-violet-100",
-    class: "bg-emerald-100 text-emerald-900 dark:bg-emerald-500/20 dark:text-emerald-100",
+    class: "bg-crimson-50 text-crimson-700 dark:bg-crimson-900/30 dark:text-crimson-200 border border-crimson-200/50 dark:border-crimson-700/50",
     icon: PHP,
   },
   CodeIgniter: {
     name: "Codeigniter",
-    class: "bg-rose-100 text-rose-900 dark:bg-rose-500/20 dark:text-rose-100",
-    class: "bg-sky-100 text-sky-900 dark:bg-sky-500/20 dark:text-sky-100",
+    class: "bg-washi-100 text-sumi-700 dark:bg-sumi-800 dark:text-washi-200 border border-crimson-200/30 dark:border-koban/30",
     icon: Codeigniter,
   },
   Bootstrap: {
     name: "Bootstrap",
-    class: "bg-amber-100 text-amber-900 dark:bg-amber-500/20 dark:text-amber-100",
-    class: "bg-indigo-100 text-indigo-900 dark:bg-indigo-500/20 dark:text-indigo-100",
+    class: "bg-koban-light/20 text-sumi-800 dark:bg-koban/20 dark:text-koban-light border border-koban/30",
     icon: Bootstrap,
   },
 };
+
 const PROJECTS = [
   {
     title: "Credencial digital - O.S.P.I.M.",
@@ -38,60 +36,96 @@ const PROJECTS = [
 ---
 
 <div class="flex flex-col gap-y-16">
-  {
-    PROJECTS.map(({ image, title, description, tags, link }) => (
-      <article class="relative overflow-hidden rounded-3xl card-surface border border-white/20 shadow-2xl">
-        <div class="absolute inset-0 bg-gradient-to-br from-violet-200/10 via-white/5 to-rose-200/20 dark:from-violet-500/10 dark:via-white/5 dark:to-rose-500/10" aria-hidden="true" />
-        <div class="absolute inset-0 bg-gradient-to-br from-emerald-200/10 via-white/5 to-sky-200/20 dark:from-emerald-500/10 dark:via-white/5 dark:to-sky-500/10" aria-hidden="true" />
-        <div class="relative grid gap-8 p-6 md:grid-cols-[1.1fr,1fr] md:p-10">
-          <div class="w-full md:w-auto">
-            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform overflow-clip rounded-2xl shadow-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl border border-black/5 dark:border-white/10">
-              <img
-                alt={title}
-                class="object-cover object-top w-full h-64 transition duration-500 sm:h-full md:scale-105 md:group-hover:scale-100"
-                loading="lazy"
-                src={image}
-              />
+  {PROJECTS.map(({ image, title, description, tags, link }, index) => (
+    <article class="group relative">
+      <!-- Número decorativo japonés -->
+      <div class="absolute -top-12 -left-4 text-crimson-100/20 dark:text-koban/10 text-[120px] 
+                  font-serif pointer-events-none select-none z-0" aria-hidden="true">
+        {String(index + 1).padStart(2, '0')}
+      </div>
+      
+      <div class="relative shoji-panel overflow-hidden">
+        <!-- Patrón de fondo -->
+        <div class="absolute inset-0 bg-asanoha opacity-10 pointer-events-none" aria-hidden="true"></div>
+        
+        <div class="relative grid gap-8 p-6 md:grid-cols-2 md:p-10">
+          <!-- Imagen del proyecto -->
+          <div class="order-2 md:order-1">
+            <div class="relative group/img">
+              <!-- Marco decorativo -->
+              <div class="absolute -inset-4 border-2 border-crimson-300/30 dark:border-koban/30 
+                          rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div class="relative overflow-hidden rounded-xl shadow-shoji-lg ring-2 
+                          ring-crimson-500/20 dark:ring-koban/20">
+                <img
+                  alt={title}
+                  class="object-cover object-top w-full h-64 sm:h-80 transition-transform duration-700 
+                         group-hover/img:scale-105"
+                  loading="lazy"
+                  src={image}
+                />
+                {/* Overlay sutil */}
+                <div class="absolute inset-0 bg-gradient-to-t from-sumi-900/40 to-transparent 
+                            opacity-0 group-hover/img:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              {/* Esquinas decorativas */}
+              <div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-crimson-500 dark:border-koban"></div>
+              <div class="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-crimson-500 dark:border-koban"></div>
+              <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-crimson-500 dark:border-koban"></div>
+              <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-crimson-500 dark:border-koban"></div>
             </div>
           </div>
 
-          <div class="w-full md:w-auto md:max-w-xl space-y-4">
-            <div class="inline-flex items-center gap-2 rounded-full bg-white/60 px-3 py-1 text-xs font-semibold tracking-wider uppercase text-violet-600 dark:bg-white/5 dark:text-violet-200">
-            <div class="inline-flex items-center gap-2 rounded-full bg-white/60 px-3 py-1 text-xs font-semibold tracking-wider uppercase text-emerald-600 dark:bg-white/5 dark:text-emerald-200">
-              Proyecto destacado
+          {/* Contenido del proyecto */}
+          <div class="order-1 md:order-2 space-y-6">
+            {/* Badge de proyecto destacado */}
+            <div class="inline-flex items-center gap-2 px-4 py-2 
+                        bg-gradient-to-r from-crimson-50 to-washi-100 
+                        dark:from-crimson-900/20 dark:to-sumi-800 
+                        rounded-full border border-crimson-200/50 dark:border-koban/30 
+                        shadow-inner-soft">
+              <div class="w-2 h-2 bg-crimson-500 dark:bg-koban rounded-full animate-pulse"></div>
+              <span class="text-xs font-semibold tracking-wider uppercase text-crimson-700 dark:text-koban">
+                Proyecto destacado
+              </span>
             </div>
-            <h3 class="text-3xl font-bold text-gray-800 dark:text-gray-100">
+
+            {/* Título */}
+            <h3 class="font-serif text-3xl md:text-4xl font-bold text-sumi-900 dark:text-washi-50 
+                       leading-tight">
               {title}
             </h3>
-            <div class="flex flex-wrap mt-1">
-              <ul class="flex flex-row mb-2 gap-2 flex-wrap">
-                {tags.map((tag) => (
-                  <li>
-                    <span
-                      class={`flex items-center gap-2 rounded-full text-xs ${tag.class} py-2 px-3 shadow-sm`}
-                    >
-                      <tag.icon class="size-4" />
-                      {tag.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
 
-              <div class="mt-2 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                {description}
-              </div>
-              <footer class="flex items-end justify-start mt-6 gap-x-4">
-                {link && (
-                  <LinkButton href={link}>
-                    <Link class="size-4" />
-                    Ver en línea
-                  </LinkButton>
-                )}
-              </footer>
+            {/* Tags de tecnologías */}
+            <div class="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span class={`flex items-center gap-2 rounded-full text-xs font-medium py-2 px-3 
+                              shadow-sm transition-all duration-300 hover:shadow-shoji ${tag.class}`}>
+                  <tag.icon class="w-4 h-4" />
+                  {tag.name}
+                </span>
+              ))}
             </div>
+
+            {/* Descripción */}
+            <p class="text-lg leading-relaxed text-sumi-700 dark:text-washi-200">
+              {description}
+            </p>
+
+            {/* Botón de acción */}
+            {link && (
+              <div class="pt-4">
+                <LinkButton href={link}>
+                  <Link class="w-4 h-4" />
+                  Ver en línea
+                </LinkButton>
+              </div>
+            )}
           </div>
         </div>
-      </article>
-    ))
-  }
+      </div>
+    </article>
+  ))}
 </div>

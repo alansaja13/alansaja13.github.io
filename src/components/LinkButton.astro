@@ -5,7 +5,23 @@ const { href } = Astro.props
 <a
   href={href}
   role="link"
-  class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group inline-flex items-center justify-center gap-2 px-6 py-3 
+         bg-gradient-crimson text-washi-50 
+         rounded-xl shadow-shoji hover:shadow-shoji-lg 
+         font-medium text-base
+         border border-crimson-700/20
+         transform hover:-translate-y-0.5 
+         transition-all duration-300 
+         focus:outline-none focus-visible:ring-2 focus-visible:ring-crimson-500 
+         dark:focus-visible:ring-koban focus-visible:ring-offset-2
+         hover:scale-105"
 >
   <slot />
+  <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
+       fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+  </svg>
 </a>

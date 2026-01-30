@@ -1,6 +1,4 @@
 ---
-import LinkInline from "./LinkInline.astro"
-
 interface Props {
   title: string
   company: string
@@ -12,49 +10,76 @@ interface Props {
 const { title, company, description, link, date } = Astro.props
 ---
 
-<div class="relative grid gap-6 pb-12 md:grid-cols-5 md:gap-10 md:space-x-4">
-  <div class="relative md:col-span-2">
-    <div class="sticky top-6 space-y-2">
-      <div class="flex items-center gap-3">
-        <span class="inline-flex size-10 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-400 to-rose-400 text-white shadow-lg">•</span>
-        <div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-violet-200">{title}</h3>
-        <span class="inline-flex size-10 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-sky-400 text-white shadow-lg">•</span>
-        <div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-emerald-200">{title}</h3>
-          <h4 class="font-semibold text-lg text-gray-600 dark:text-white">{company}</h4>
+<div class="relative group">
+  <!-- Línea de tiempo vertical -->
+  <div class="absolute left-6 top-14 bottom-0 w-px bg-gradient-to-b from-crimson-400 to-transparent 
+              dark:from-koban dark:to-transparent opacity-50 md:left-auto md:right-[calc(60%-1px)]"></div>
+  
+  <div class="relative grid gap-6 pb-16 md:grid-cols-5 md:gap-10">
+    <!-- Fecha y rol (columna izquierda) -->
+    <div class="relative md:col-span-2">
+      <div class="flex items-start gap-4 md:justify-end md:text-right">
+        <!-- Círculo indicador -->
+        <div class="flex-shrink-0 relative z-10">
+          <div class="w-12 h-12 rounded-full bg-gradient-crimson flex items-center justify-center 
+                      shadow-shoji-lg ring-4 ring-washi-50 dark:ring-sumi-900">
+            <svg class="w-6 h-6 text-washi-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <!-- Efecto de glow -->
+          <div class="absolute inset-0 rounded-full bg-crimson-500 dark:bg-koban blur-xl opacity-40 
+                      group-hover:opacity-60 transition-opacity duration-500"></div>
+        </div>
+        
+        <div class="flex-1 space-y-2 md:pr-4">
+          <h3 class="text-xl font-bold text-sumi-900 dark:text-washi-50 font-serif">
+            {title}
+          </h3>
+          <h4 class="text-lg font-semibold text-crimson-600 dark:text-koban">
+            {company}
+          </h4>
+          <time class="inline-flex items-center gap-2 text-sm text-sumi-600 dark:text-washi-300 
+                       bg-washi-100 dark:bg-sumi-800 px-3 py-1 rounded-full border border-crimson-200/30 
+                       dark:border-koban/20">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            {date}
+          </time>
         </div>
       </div>
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
     </div>
-  </div>
-  <div class="relative md:col-span-3">
-    <div class="card-surface rounded-2xl p-5 space-y-3 border border-white/15 shadow-xl">
-      <p class="text-gray-700 dark:text-gray-200 leading-relaxed">{description}</p>
-      {
-        link && (
-          <LinkInline href={link}>
-            Saber más{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-5 icon icon-tabler icon-tabler-chevron-right"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <>
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M9 6l6 6l-6 6" />
-              </>
+
+    <!-- Descripción (columna derecha) -->
+    <div class="relative md:col-span-3 md:pl-10">
+      <div class="shoji-panel p-6 space-y-4 group-hover:shadow-shoji-lg transition-all duration-300">
+        <!-- Esquina decorativa -->
+        <div class="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-crimson-400/30 
+                    dark:border-koban/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
+        <p class="text-sumi-700 dark:text-washi-200 leading-relaxed">
+          {description}
+        </p>
+        
+        {link && (
+          <a 
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm font-medium text-crimson-600 dark:text-koban 
+                   hover:gap-3 transition-all duration-300 group/link"
+          >
+            Saber más
+            <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" 
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
-          </LinkInline>
-        )
-      }
+          </a>
+        )}
+      </div>
     </div>
   </div>
 </div>

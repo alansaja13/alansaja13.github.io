@@ -5,85 +5,168 @@ import MailIcon from "../components/icons/Mail.astro";
 import SocialPill from "../components/SocialPill.astro";
 ---
 
-<div class="relative max-w-5xl overflow-hidden rounded-3xl card-surface border border-white/30">
-  <div class="absolute inset-0 opacity-40 bg-gradient-to-br from-violet-200/40 via-white/20 to-rose-200/50 dark:from-violet-500/10 dark:via-white/5 dark:to-rose-500/10" />
-  <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-violet-400/20 blur-3xl" aria-hidden="true" />
-  <div class="absolute -bottom-12 -left-20 h-40 w-40 rounded-full bg-rose-400/20 blur-3xl" aria-hidden="true" />
-  <div class="absolute inset-0 opacity-40 bg-gradient-to-br from-emerald-200/40 via-white/20 to-sky-200/50 dark:from-emerald-500/10 dark:via-white/5 dark:to-sky-500/10" />
-  <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-emerald-400/20 blur-3xl" aria-hidden="true" />
-  <div class="absolute -bottom-12 -left-20 h-40 w-40 rounded-full bg-sky-400/20 blur-3xl" aria-hidden="true" />
-
-  <div class="relative grid gap-10 p-8 md:grid-cols-[auto,1fr] md:p-12 items-center">
-    <div class="flex flex-col items-center gap-4 text-center md:text-left">
-      <img
-        class="rounded-2xl shadow-2xl ring-4 ring-white/50 dark:ring-white/10 size-28 object-cover"
-        src="/alandev.jpeg"
-        alt={personalImageAlt}
-        loading="lazy"
-      />
-      <span class="pill">Desarrollador web &amp; HelpDesk IT</span>
-      <a
-        href="https://linkedin.com/in/alan-saja"
-        target="_blank"
-        rel="noopener"
-        class="text-sm text-violet-600 dark:text-violet-300 hover:underline"
-        class="text-sm text-emerald-600 dark:text-emerald-300 hover:underline"
-      >
-        Buenos Aires, Argentina
-      </a>
-    </div>
-
-    <div class="space-y-6">
-      <div class="space-y-3">
-        <p class="text-sm uppercase tracking-[0.3em] text-violet-600 dark:text-violet-300">Hola! Soy</p>
-        <p class="text-sm uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-300">Hola! Soy</p>
-        <h1
-          class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl dark:text-white drop-shadow"
-        >
-          Alan Saja
-        </h1>
-        <p
-          class="text-lg leading-relaxed text-gray-800 dark:text-gray-200 dark:[&>strong]:text-violet-300 [&>strong]:text-violet-600 [&>strong]:font-semibold"
-          class="text-lg leading-relaxed text-gray-800 dark:text-gray-200 dark:[&>strong]:text-emerald-300 [&>strong]:text-emerald-600 [&>strong]:font-semibold"
-        >
-          <strong>Creo experiencias digitales que unen infraestructura y código.</strong>
-          Trabajo con hardware y software, configurando servidores, brindando soporte y
-          desarrollando sitios web y aplicaciones enfocadas en rendimiento y confiabilidad.
-        </p>
-      </div>
-
-      <div class="grid gap-3 sm:grid-cols-3">
-        <div class="rounded-2xl border border-black/5 bg-white/60 px-4 py-3 text-sm font-semibold shadow-sm dark:border-white/10 dark:bg-white/5">
-          <p class="text-xs text-gray-500 dark:text-gray-300">Stack favorito</p>
-          <p class="text-gray-900 dark:text-white">Astro · PHP · Tailwind</p>
+<div class="relative max-w-6xl mx-auto">
+  <!-- Decoración japonesa superior -->
+  <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-crimson rounded-full opacity-60" aria-hidden="true"></div>
+  
+  <div class="shoji-panel p-8 md:p-12 overflow-hidden relative">
+    <!-- Patrón de fondo sutil -->
+    <div class="absolute inset-0 bg-seigaiha opacity-20 pointer-events-none" aria-hidden="true"></div>
+    
+    <!-- Contenido principal -->
+    <div class="relative grid gap-10 md:grid-cols-[auto,1fr] items-center">
+      <!-- Columna izquierda: Imagen y badges -->
+      <div class="flex flex-col items-center gap-6 text-center md:text-left">
+        <!-- Imagen con marco estilo japonés -->
+        <div class="relative group">
+          <div class="absolute -inset-4 bg-gradient-crimson rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+          <div class="relative p-2 bg-gradient-to-br from-washi-100 to-washi-200 dark:from-sumi-800 dark:to-sumi-700 rounded-2xl">
+            <img
+              class="rounded-xl shadow-shoji-lg ring-2 ring-crimson-500/20 dark:ring-koban/20 w-32 h-32 md:w-36 md:h-36 object-cover"
+              src="/alandev.jpeg"
+              alt={personalImageAlt}
+              loading="eager"
+            />
+          </div>
+          <!-- Sello decorativo -->
+          <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-crimson-600 dark:bg-koban rounded-full 
+                      flex items-center justify-center shadow-lg transform rotate-12">
+            <svg class="w-6 h-6 text-washi-50" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+              <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+          </div>
         </div>
-        <div class="rounded-2xl border border-black/5 bg-white/60 px-4 py-3 text-sm font-semibold shadow-sm dark:border-white/10 dark:bg-white/5">
-          <p class="text-xs text-gray-500 dark:text-gray-300">Rol actual</p>
-          <p class="text-gray-900 dark:text-white">Frontend &amp; Soporte IT</p>
-        </div>
-        <div class="rounded-2xl border border-black/5 bg-white/60 px-4 py-3 text-sm font-semibold shadow-sm dark:border-white/10 dark:bg-white/5">
-          <p class="text-xs text-gray-500 dark:text-gray-300">Experiencia</p>
-          <p class="text-gray-900 dark:text-white">+5 años en tecnología</p>
-        </div>
-      </div>
 
-      <nav class="flex flex-wrap items-center gap-4">
+        <!-- Badge de rol -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-washi-100 dark:bg-sumi-800 
+                    border border-crimson-200 dark:border-koban/30 rounded-full shadow-inner-soft">
+          <div class="w-2 h-2 bg-crimson-500 dark:bg-koban rounded-full animate-pulse"></div>
+          <span class="text-xs font-semibold text-sumi-700 dark:text-washi-200 tracking-wide uppercase">
+            Desarrollador Web & HelpDesk IT
+          </span>
+        </div>
+
+        <!-- Ubicación -->
         <a
-          href="#proyectos"
-          class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-500 to-rose-500 px-4 py-2 text-white shadow-lg transition hover:translate-y-[-1px] hover:shadow-xl"
-          class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-sky-500 px-4 py-2 text-white shadow-lg transition hover:translate-y-[-1px] hover:shadow-xl"
+          href="https://linkedin.com/in/alan-saja"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-2 text-sm text-crimson-600 dark:text-koban hover:underline 
+                 transition-all duration-300 hover:gap-3"
         >
-          Ver proyectos
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          Buenos Aires, Argentina
         </a>
-        <SocialPill href="mailto:alansaja13@gmail.com">
-          <MailIcon class="size-4" />
-          Contáctame
-        </SocialPill>
-        <SocialPill href="https://linkedin.com/in/alan-saja">
-          <LinkedInIcon class="size-4" />
-          LinkedIn
-        </SocialPill>
-      </nav>
+      </div>
+
+      <!-- Columna derecha: Información principal -->
+      <div class="space-y-8">
+        <!-- Saludo y nombre -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-crimson-400 to-transparent opacity-50"></div>
+            <p class="font-serif text-sm text-crimson-600 dark:text-koban tracking-[0.3em] uppercase">
+              Hola, soy
+            </p>
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-crimson-400 to-transparent opacity-50"></div>
+          </div>
+          
+          <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-sumi-900 dark:text-washi-50 
+                     leading-tight tracking-tight">
+            Alan Saja
+          </h1>
+          
+          <p class="text-lg md:text-xl leading-relaxed text-sumi-700 dark:text-washi-200">
+            <strong class="font-semibold text-crimson-600 dark:text-koban">
+              Creo experiencias digitales que unen infraestructura y código.
+            </strong>
+            Trabajo con hardware y software, configurando servidores, brindando soporte y
+            desarrollando sitios web y aplicaciones enfocadas en rendimiento y confiabilidad.
+          </p>
+        </div>
+
+        <!-- Tarjetas de información -->
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="group relative p-4 bg-gradient-to-br from-washi-100 to-washi-200 
+                      dark:from-sumi-800 dark:to-sumi-700 rounded-xl border border-crimson-200/50 
+                      dark:border-koban/20 shadow-shoji hover:shadow-shoji-lg transition-all duration-300">
+            <div class="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-crimson-400 dark:border-koban/50 
+                        opacity-40 group-hover:opacity-70 transition-opacity"></div>
+            <p class="text-xs font-medium text-sumi-600 dark:text-washi-300 mb-1">Stack favorito</p>
+            <p class="text-sm font-semibold text-sumi-900 dark:text-washi-50">Astro · PHP · Tailwind</p>
+          </div>
+          
+          <div class="group relative p-4 bg-gradient-to-br from-washi-100 to-washi-200 
+                      dark:from-sumi-800 dark:to-sumi-700 rounded-xl border border-crimson-200/50 
+                      dark:border-koban/20 shadow-shoji hover:shadow-shoji-lg transition-all duration-300">
+            <div class="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-crimson-400 dark:border-koban/50 
+                        opacity-40 group-hover:opacity-70 transition-opacity"></div>
+            <p class="text-xs font-medium text-sumi-600 dark:text-washi-300 mb-1">Rol actual</p>
+            <p class="text-sm font-semibold text-sumi-900 dark:text-washi-50">Frontend & Soporte IT</p>
+          </div>
+          
+          <div class="group relative p-4 bg-gradient-to-br from-washi-100 to-washi-200 
+                      dark:from-sumi-800 dark:to-sumi-700 rounded-xl border border-crimson-200/50 
+                      dark:border-koban/20 shadow-shoji hover:shadow-shoji-lg transition-all duration-300">
+            <div class="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-crimson-400 dark:border-koban/50 
+                        opacity-40 group-hover:opacity-70 transition-opacity"></div>
+            <p class="text-xs font-medium text-sumi-600 dark:text-washi-300 mb-1">Experiencia</p>
+            <p class="text-sm font-semibold text-sumi-900 dark:text-washi-50">+5 años en tecnología</p>
+          </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <nav class="flex flex-wrap items-center gap-4">
+          <a
+            href="#proyectos"
+            class="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-crimson text-washi-50 
+                   rounded-lg shadow-shoji hover:shadow-shoji-lg font-medium
+                   transform hover:-translate-y-0.5 transition-all duration-300"
+          >
+            Ver proyectos
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+          
+          <SocialPill href="mailto:alansaja13@gmail.com">
+            <MailIcon class="size-4" />
+            Contáctame
+          </SocialPill>
+          
+          <SocialPill href="https://linkedin.com/in/alan-saja">
+            <LinkedInIcon class="size-4" />
+            LinkedIn
+          </SocialPill>
+        </nav>
+      </div>
     </div>
   </div>
+
+  <!-- Decoración japonesa inferior -->
+  <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-crimson rounded-full opacity-60" aria-hidden="true"></div>
 </div>
+
+<style>
+  .shoji-panel {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
