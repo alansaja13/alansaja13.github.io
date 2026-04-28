@@ -1,0 +1,254 @@
+<div id="interactive-container" class="fixed inset-0 pointer-events-none z-20 overflow-hidden">
+  <canvas id="bg-canvas" class="absolute inset-0"></canvas>
+  <div id="vignette" class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_40%,rgba(5,12,4,0.3)_100%)]"></div>
+  <div id="eco" class="fixed pointer-events-none font-serif italic text-[15px] tracking-[0.12em] text-crimson-600 dark:text-koban opacity-0 z-[99]"></div>
+
+  <div id="interactive-elements" class="absolute inset-0 pointer-events-none">
+    <!-- Planta (cultivo) -->
+    <div class="obj absolute pointer-events-auto cursor-pointer text-sumi-600/30 dark:text-washi-200/10 hover:text-crimson-600 dark:hover:text-koban transition-colors duration-500" style="top:18%;left:14%" data-p="0.45" data-eco="green gold">
+      <svg width="48" height="58" viewBox="0 0 40 50" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="20" y1="48" x2="20" y2="16"/>
+        <path d="M20 38 Q30 26 34 14 Q22 12 18 24"/>
+        <path d="M20 28 Q10 18 6 8 Q18 6 22 18"/>
+        <path d="M20 19 Q24 12 28 8"/>
+      </svg>
+    </div>
+
+    <!-- Básquet -->
+    <div class="obj absolute pointer-events-auto cursor-pointer text-sumi-600/30 dark:text-washi-200/10 hover:text-crimson-600 dark:hover:text-koban transition-colors duration-500" style="top:72%;left:10%" data-p="0.28" data-eco="La pampa">
+      <svg width="50" height="50" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <circle cx="20" cy="20" r="16"/>
+        <path d="M4.5 20 Q12 13 20 20 Q28 27 35.5 20"/>
+        <path d="M20 4.5 Q13 12 20 20 Q27 28 20 35.5"/>
+      </svg>
+    </div>
+
+    <!-- Sol de Mayo -->
+    <div class="obj absolute pointer-events-auto cursor-pointer text-sumi-600/30 dark:text-washi-200/10 hover:text-crimson-600 dark:hover:text-koban transition-colors duration-500" style="top:26%;left:82%" data-p="0.38" data-eco="Arg<3">
+      <svg width="60" height="60" viewBox="0 0 58 58" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="29" cy="29" r="10"/>
+        <circle cx="26" cy="27" r="1.2" fill="currentColor"/>
+        <circle cx="32" cy="27" r="1.2" fill="currentColor"/>
+        <path d="M25 32 Q29 35.5 33 32"/>
+        <path d="M23 24 Q25.5 22 28 24"/>
+        <path d="M30 24 Q32.5 22 35 24"/>
+        <line x1="29" y1="5"  x2="29" y2="17"/>
+        <line x1="29" y1="41" x2="29" y2="53"/>
+        <line x1="5"  y1="29" x2="17" y2="29"/>
+        <line x1="41" y1="29" x2="53" y2="29"/>
+        <line x1="37.5" y1="20.5" x2="46" y2="12"/>
+        <line x1="37.5" y1="37.5" x2="46" y2="46"/>
+        <line x1="20.5" y1="37.5" x2="12" y2="46"/>
+        <line x1="20.5" y1="20.5" x2="12" y2="12"/>
+        <path d="M34 18 Q38 14 36 9 Q34 5 38 3"/>
+        <path d="M40 34 Q44 38 49 36 Q53 34 55 38"/>
+        <path d="M40 24 Q44 20 49 22 Q53 24 55 20"/>
+        <path d="M34 40 Q38 44 36 49 Q34 53 38 55"/>
+        <path d="M24 40 Q20 44 22 49 Q24 53 20 55"/>
+        <path d="M18 34 Q14 38 9 36 Q5 34 3 38"/>
+        <path d="M18 24 Q14 20 9 22 Q5 24 3 20"/>
+        <path d="M24 18 Q20 14 22 9 Q24 5 20 3"/>
+      </svg>
+    </div>
+
+    <!-- Mate -->
+    <div class="obj absolute pointer-events-auto cursor-pointer text-sumi-600/30 dark:text-washi-200/10 hover:text-crimson-600 dark:hover:text-koban transition-colors duration-500" style="top:76%;left:78%" data-p="0.22" data-eco="ritual">
+      <svg width="46" height="50" viewBox="0 0 40 46" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 4 Q16 0 18 -2"/>
+        <path d="M23 6 Q22 2 24 0"/>
+        <line x1="22" y1="8" x2="22" y2="20"/>
+        <circle cx="22" cy="21" r="1.8"/>
+        <path d="M10 18 L30 18 L26 40 L14 40 Z"/>
+        <path d="M30 22 Q38 22 38 28 Q38 35 30 35"/>
+      </svg>
+    </div>
+
+    <!-- Bici -->
+    <div class="obj absolute pointer-events-auto cursor-pointer text-sumi-600/30 dark:text-washi-200/10 hover:text-crimson-600 dark:hover:text-koban transition-colors duration-500" style="top:19%;left:66%" data-p="0.48" data-eco="VP">
+      <svg width="66" height="46" viewBox="0 0 60 42" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="30" r="10"/>
+        <circle cx="48" cy="30" r="10"/>
+        <path d="M12 30 L22 12 L38 12"/>
+        <path d="M30 12 L48 30"/>
+        <path d="M22 12 L27 30"/>
+        <path d="M38 12 L43 9 L47 9"/>
+        <line x1="45" y1="9" x2="45" y2="14"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initInteractive() {
+    const cv = document.getElementById('bg-canvas') as HTMLCanvasElement;
+    if (!cv) return;
+    const ctx = cv.getContext('2d')!;
+
+    function resize() {
+      cv.width = window.innerWidth;
+      cv.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    const target = { x: mouse.x, y: mouse.y };
+
+    window.addEventListener('mousemove', (e) => {
+      target.x = e.clientX;
+      target.y = e.clientY;
+    });
+
+    const pts = Array.from({ length: 80 }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      vx: (Math.random() - 0.5) * 0.2,
+      vy: (Math.random() - 0.5) * 0.2,
+      r: Math.random() * 1.5 + 0.5,
+      op: Math.random() * 0.2 + 0.05,
+    }));
+
+    const waves: { x: number; y: number; r: number; op: number }[] = [];
+
+    document.addEventListener('click', (e) => {
+      const t = e.target as HTMLElement;
+      if (t.closest('.obj')) return;
+      waves.push({ x: e.clientX, y: e.clientY, r: 0, op: 0.4 });
+    });
+
+    function drawWaves() {
+      for (let i = waves.length - 1; i >= 0; i--) {
+        const w = waves[i];
+        w.r += 4;
+        w.op *= 0.94;
+        for (const p of pts) {
+          const dx = p.x - w.x;
+          const dy = p.y - w.y;
+          const d = Math.hypot(dx, dy);
+          const diff = Math.abs(d - w.r);
+          if (diff < 30 && d > 0) {
+            const f = ((30 - diff) / 30) * 1.2;
+            p.vx += (dx / d) * f;
+            p.vy += (dy / d) * f;
+          }
+        }
+        if (w.op < 0.01) {
+          waves.splice(i, 1);
+          continue;
+        }
+        ctx.beginPath();
+        ctx.arc(w.x, w.y, w.r, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(193, 39, 45, ${w.op * 0.2})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+
+    function frame() {
+      mouse.x += (target.x - mouse.x) * 0.05;
+      mouse.y += (target.y - mouse.y) * 0.05;
+      ctx.clearRect(0, 0, cv.width, cv.height);
+
+      for (const p of pts) {
+        const dx = p.x - mouse.x;
+        const dy = p.y - mouse.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 160 && d > 0) {
+          const f = ((160 - d) / 160) * 0.4;
+          p.vx += (dx / d) * f;
+          p.vy += (dy / d) * f;
+        }
+        p.vx *= 0.95;
+        p.vy *= 0.95;
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = cv.width;
+        if (p.x > cv.width) p.x = 0;
+        if (p.y < 0) p.y = cv.height;
+        if (p.y > cv.height) p.y = 0;
+
+        const blend = Math.max(0, 1 - d / 180);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      // Usando paleta Koban (#D4AF37) para dark y Crimson (#C1272D) para light
+        const color = document.documentElement.classList.contains('dark') ? '212, 175, 55' : '193, 39, 45';
+        ctx.fillStyle = `rgba(${color}, ${p.op + blend * 0.2})`;
+        ctx.fill();
+      }
+
+      for (let i = 0; i < pts.length - 1; i++) {
+        for (let j = i + 1; j < pts.length; j++) {
+          const dx = pts[i].x - pts[j].x;
+          const dy = pts[i].y - pts[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 100) {
+            ctx.beginPath();
+            ctx.moveTo(pts[i].x, pts[i].y);
+            ctx.lineTo(pts[j].x, pts[j].y);
+            const color = document.documentElement.classList.contains('dark') ? '212, 175, 55' : '193, 39, 45';
+            ctx.strokeStyle = `rgba(${color}, ${0.05 * (1 - d / 100)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      drawWaves();
+      requestAnimationFrame(frame);
+    }
+
+    frame();
+
+    // Parallax
+    const objEls = document.querySelectorAll<HTMLElement>('.obj');
+    window.addEventListener('mousemove', (e) => {
+      const ox = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+      const oy = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+      objEls.forEach((el) => {
+        const f = parseFloat(el.dataset.p ?? '0.3');
+        const tx = ox * f * 30;
+        const ty = oy * f * 30;
+        el.style.transform = `translate(${tx}px, ${ty}px)`;
+      });
+    });
+
+    // Eco flotante
+    const ecoEl = document.getElementById('eco')!;
+    let ecoTimer: ReturnType<typeof setTimeout>;
+
+    objEls.forEach((el) => {
+      el.addEventListener('click', (e) => {
+        const msg = el.dataset.eco;
+        if (!msg) return;
+
+        clearTimeout(ecoTimer);
+        ecoEl.style.transition = 'none';
+        ecoEl.style.opacity = '0';
+        ecoEl.style.transform = 'translateY(0px)';
+        ecoEl.style.left = e.clientX + 'px';
+        ecoEl.style.top = e.clientY + 'px';
+        ecoEl.textContent = msg;
+
+        ecoEl.getBoundingClientRect();
+        ecoEl.style.transition = 'opacity 0.35s ease, transform 1.4s ease';
+        ecoEl.style.opacity = '1';
+        ecoEl.style.transform = 'translateY(-36px)';
+
+        ecoTimer = setTimeout(() => {
+          ecoEl.style.opacity = '0';
+        }, 1400);
+      });
+    });
+  }
+
+  // Init on load and after swaps
+  initInteractive();
+  document.addEventListener('astro:after-swap', initInteractive);
+</script>
+
+<style>
+  .obj {
+    transform: translate(-50%, -50%);
+    will-change: transform;
+  }
+</style>
